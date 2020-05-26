@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { valueAction } from '../Reducers/actions/actionValue';
+import { valueAction, valueActionReboot } from '../Reducers/actions/actionValue';
 
 export default function Cabecalho() {
 
@@ -10,6 +10,7 @@ export default function Cabecalho() {
 
   function handleChange() {
     let element = document.getElementById('count');
+    dispatch(valueActionReboot());
     return Number(element.value);
   }
 
