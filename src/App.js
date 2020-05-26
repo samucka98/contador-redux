@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createStore, combineReducers } from 'redux';
+import contadorReducer from './Reducers/ContadorReducers';
+import valorContador from './Reducers/ValorContador';
+import { Provider } from 'react-redux';
+
+import Cabecalho from './components/Cabecalho';
+import Contador from './components/Contador';
+
 
 function App() {
+
+  const allReducers = combineReducers({counter: contadorReducer, value: valorContador})
+  const store = createStore(allReducers)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <Provider store={store}>
+        <Cabecalho></Cabecalho>
+        <Contador></Contador>
+      </Provider>
     </div>
   );
 }
