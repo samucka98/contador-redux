@@ -24,3 +24,30 @@ label {
 input {
   width: 60px;
 }
+
+h3 {
+  background-color: #888;
+  width: 110px;
+  padding: 5px;
+  margin: 10px 2px;
+  border-radius: 4px;
+  color: #eee;
+}
+
+button {
+  margin: 2px;
+  padding: 6px 25px;
+  border: none;
+  background: none;
+  color: #fff;
+  background-color: #333;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: .4s;
+}
+
+button:hover {
+  filter: brightness(60%);
+  transition: .6s;
+}
